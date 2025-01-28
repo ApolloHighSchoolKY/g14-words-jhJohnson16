@@ -4,12 +4,12 @@ import java.util.ArrayList;
 public class Word
 {
 	private String word;
-	private final static String VOWELS = "AEIOUaeiou";   //static means only one
+	private static final String VOWELS = "AEIOUaeiou";   //static means only one
 
 
 	public Word()
 	{
-		word="Gosh Darn I love My Low Taper Fade";
+		word="";
 	}
 
 	public Word(String newWord)
@@ -26,9 +26,13 @@ public class Word
 	{
 		int count = 0;
 		//Loop for every letter in "word"
-			for(int i = word.length()-1; i=0; i--)
-				if(word.indexOf(VOWELS))
+			for(int i = 0; i<word.length(); i++)
+			{
+				if(VOWELS.indexOf(word.substring(i, i+1))>-1);
 				count++;
+			}
+				
+				
 	      //Use indexOf to see if the letter is in the string "vowels"
 		
 

@@ -8,26 +8,26 @@ public class Words
 
 	public Words()
 	{
-		list = new ArrayList<wordlist>();
+		wordList = new ArrayList<word>();
 	}
 
 	public Words(String s)
 	{
-		list = new ArrayList<wordlist>();
+		wordList = new ArrayList<word>();
 
 		setList(s);
 	}
 
 	public void setWords(String s)
 	{
-		list.clear();
+		wordList.clear();
 		//Create a Scanner for the list of words in the string "s"
 		Scanner silly = new Scanner(s);
 
 		//Continue to loop while there are more words to read
 			while(silly.hasNext())
 			{
-				list.add(new wordList(silly.nextInt()));
+				wordList.add(new Word(silly.next()));
 			}
 			//Add objects of the type Word to our ArrayList "wordList"
 
@@ -39,8 +39,8 @@ public class Words
 		int count=0;
 
 		//for every Word in the ArrayList "wordList"
-			for(wordList Word: list)
-				if(word.length==size)
+			for(Word theWord: wordList)
+				if(word.getLength()==size)
 				count++;
 
 
@@ -57,9 +57,15 @@ public class Words
 		int vowelCount = 0;
 
 		//for each Word in the ArrayList "words" loop
-			for(wordList word: list)
-				if(word.size==Char)
-				vowelCount++;
+			for(int i=wordList.size()-1; i>0; i--)
+				if(wordList.get(i).getNumVowels()>-1)
+				{
+					vowelCount++;
+				}
+				if(wordList.get(i).getLength()==size)
+				{
+					wordList.remove(i);
+				}
 			//if the Word has "size" characters
 
 
@@ -71,8 +77,8 @@ public class Words
 		int count=0;
 
 		//for every Word in the ArrayList "words"
-			for(wordList word: list)
-				if(theWord.getLength() == size)
+			for(Word words: wordList)
+				if(words.getNumVowels() == numVowels)
 				count++;
 			//if the number of vowels in "theWord" is the same as the parameter "numVowels"
 
