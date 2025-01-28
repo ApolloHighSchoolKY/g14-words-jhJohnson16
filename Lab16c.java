@@ -24,5 +24,20 @@ public class Lab16c
 
 		//more test cases
 
+		Words testOne = new Words("looked in the mirror sharp as a blade");
+		System.out.println(testOne);
+		System.out.println("word with 2 vowels = "+testOne.countWordsWithXVowels(2));
+		System.out.println("word with 3 vowels = "+testOne.countWordsWithXVowels(3));
+		System.out.println("word with 4 vowels = "+testOne.countWordsWithXVowels(4));
+		System.out.println("word with 2 chars = "+testOne.countWordsWithXChars(2));
+		System.out.println("word with 3 chars = "+testOne.countWordsWithXChars(3));
+		System.out.println("word with 4 chars = "+testOne.countWordsWithXChars(4));
+		System.out.println("word with 5 chars = "+testOne.countWordsWithXChars(5));
+
+		int vowelsRemovedTwo = test.removeWordsWithXChars(3);
+		System.out.println("\nafter removing words with 3 chars \n" + testOne);
+		System.out.println("\nnumber of vowels in the words removed == " + vowelsRemovedTwo);
+		System.out.println("\n\n");
+
 	}
 }
